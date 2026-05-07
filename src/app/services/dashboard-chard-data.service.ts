@@ -110,7 +110,25 @@ export class DashboardChartDataService implements OnDestroy {
         symbolSize: 6,
         itemStyle: { color: '#4682B4' },
         symbol: 'triangle'
-      }
+      },
+            // Линия 3
+      {
+        name: 'Линия 3',
+        type: 'line',
+        data: Array.from({ length: 100 }, (_, i) => 20 + i * 0.5 + Math.cos(i * 0.1) * 7),
+        smooth: true,
+        lineStyle: { color: '#1ec00f' , type: "dashed"},
+        showSymbol: false
+      },
+                  // Линия 4
+      {
+        name: 'Линия 4',
+        type: 'line',
+        data: Array.from({ length: 100 }, (_, i) => 50 - i * 0.5 + Math.sin(i * 0.1) * 7),
+        smooth: true,
+        lineStyle: { color: '#9d00a0' , type: "dashed"},
+        showSymbol: false
+      },
     ];
 
     this.dataSubject.next({ series: newSeries });
@@ -173,7 +191,25 @@ export class DashboardChartDataService implements OnDestroy {
         data: Array.from({ length: 50 }, (_, i) => [i * 2 + 1, 20 + i * 2 * 0.5 - Math.random() * 10]),
         symbolSize: 6,
         itemStyle: { color: '#4682B4' }
-      }
+      },
+                  // Линия 3
+      {
+        name: 'Линия 3',
+        type: 'line',
+        data: Array.from({ length: 100 }, (_, i) => 20 + i * 0.5 + Math.cos(i * 0.1) * 7),
+        smooth: true,
+        lineStyle: { color: '#1ec00f' , type: "dashed"},
+        showSymbol: false
+      },
+                  // Линия 4
+      {
+        name: 'Линия 4',
+        type: 'line',
+        data: Array.from({ length: 100 }, (_, i) => 50 - i * 0.5 + Math.sin(i * 0.1) * 7),
+        smooth: true,
+        lineStyle: { color: '#9d00a0' , type: "dashed"},
+        showSymbol: false
+      },
     ]
   };
 }
