@@ -4,7 +4,8 @@
   width: 800px;
 }
 
-#main {
+:host ::ng-deep ag-charts-angular {
   height: 100%;
   width: 100%;
+  display: block;
 }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AgChartsAngularModule } from 'ag-charts-angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,7 +15,8 @@ import { AgDataChartComponent } from './components/ag-data-chart/ag-data-chart.c
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AgChartsAngularModule
   ],
   providers: [],
   bootstrap: [AppComponent]

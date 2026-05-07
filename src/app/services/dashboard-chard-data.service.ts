@@ -5,7 +5,7 @@ import { takeUntil } from "rxjs/operators";
 export interface ChartSeriesData {
   name: string;
   type: 'line' | 'scatter';
-  data: number[] | [number, number][] | number [][];
+  data: number[] | [number, number][];
   [key: string]: any;
 }
 
@@ -54,7 +54,7 @@ export class DashboardChartDataService implements OnDestroy {
       {
         name: 'Точки вокруг линии 1',
         type: 'scatter',
-        data: Array.from({ length: 20 }, (_, i) => {
+        data: Array.from({ length: 20 }, (_, i): [number, number] => {
           const x = 1 + i * 99 / 19;
           const base = 50 - x * 0.5 + Math.sin(x * 0.1) * 5;
           const offset = (Math.random() > 0.5 ? 1 : -1) * Math.random() * 20;
@@ -79,7 +79,7 @@ export class DashboardChartDataService implements OnDestroy {
       {
         name: 'Точки вокруг линии 2',
         type: 'scatter',
-        data: Array.from({ length: 20 }, (_, i) => {
+        data: Array.from({ length: 20 }, (_, i): [number, number] => {
           const x = 1 + i * 99 / 19;
           const base = 20 + x * 0.5 + Math.cos(x * 0.1) * 5;
           const offset = (Math.random() > 0.5 ? 1 : -1) * Math.random() * 20;
@@ -129,7 +129,7 @@ export class DashboardChartDataService implements OnDestroy {
       {
         name: 'Точки вокруг линии 1',
         type: 'scatter',
-        data: Array.from({ length: 20 }, (_, i) => {
+        data: Array.from({ length: 20 }, (_, i): [number, number] => {
           const x = 1 + i * 99 / 19;
           const base = 50 - x * 0.5;
           const offset = (Math.random() > 0.5 ? 1 : -1) * Math.random() * 10;
@@ -153,7 +153,7 @@ export class DashboardChartDataService implements OnDestroy {
       {
         name: 'Точки вокруг линии 2',
         type: 'scatter',
-        data: Array.from({ length: 20 }, (_, i) => {
+        data: Array.from({ length: 20 }, (_, i): [number, number] => {
           const x = 1 + i * 99 / 19;
           const base = 20 + x * 0.5;
           const offset = (Math.random() > 0.5 ? 1 : -1) * Math.random() * 10;
