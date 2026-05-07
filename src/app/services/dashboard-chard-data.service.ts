@@ -50,27 +50,16 @@ export class DashboardChartDataService implements OnDestroy {
         showSymbol: false
       },
 
-      // Над линией 1
+      // Точки вокруг линии 1
       {
-        name: 'Над линией 1',
+        name: 'Точки вокруг линии 1',
         type: 'scatter',
-        data: Array.from({ length: 50 }, (_, i) => ([
-          i * 2 + 1,
-          50 - i * 2 * 0.5 + Math.sin(i * 0.1) * 5 + Math.random() * 20
-        ])),
-        symbolSize: 6,
-        itemStyle: { color: '#FF7F50' },
-        symbol: 'triangle'
-      },
-
-      // Под линией 1
-      {
-        name: 'Под линией 1',
-        type: 'scatter',
-        data: Array.from({ length: 50 }, (_, i) => ([
-          i * 2 + 1,
-          50 - i * 2 * 0.5 + Math.sin(i * 0.1) * 5 - Math.random() * 20
-        ])),
+        data: Array.from({ length: 20 }, (_, i) => {
+          const x = 1 + i * 99 / 19;
+          const base = 50 - x * 0.5 + Math.sin(x * 0.1) * 5;
+          const offset = (Math.random() > 0.5 ? 1 : -1) * Math.random() * 20;
+          return [x, base + offset];
+        }),
         symbolSize: 6,
         itemStyle: { color: '#FF7F50' },
         symbol: 'triangle'
@@ -86,27 +75,16 @@ export class DashboardChartDataService implements OnDestroy {
         showSymbol: false
       },
 
-      // Над линией 2
+      // Точки вокруг линии 2
       {
-        name: 'Над линией 2',
+        name: 'Точки вокруг линии 2',
         type: 'scatter',
-        data: Array.from({ length: 50 }, (_, i) => ([
-          i * 2 + 1,
-          20 + i * 2 * 0.5 + Math.cos(i * 0.1) * 5 + Math.random() * 20
-        ])),
-        symbolSize: 6,
-        itemStyle: { color: '#4682B4' },
-        symbol: 'triangle'
-      },
-
-      // Под линией 2
-      {
-        name: 'Под линией 2',
-        type: 'scatter',
-        data: Array.from({ length: 50 }, (_, i) => ([
-          i * 2 + 1,
-          20 + i * 2 * 0.5 + Math.cos(i * 0.1) * 5 - Math.random() * 20
-        ])),
+        data: Array.from({ length: 20 }, (_, i) => {
+          const x = 1 + i * 99 / 19;
+          const base = 20 + x * 0.5 + Math.cos(x * 0.1) * 5;
+          const offset = (Math.random() > 0.5 ? 1 : -1) * Math.random() * 20;
+          return [x, base + offset];
+        }),
         symbolSize: 6,
         itemStyle: { color: '#4682B4' },
         symbol: 'triangle'
@@ -147,20 +125,16 @@ export class DashboardChartDataService implements OnDestroy {
         showSymbol: false
       },
 
-      // Над линией 1
+      // Точки вокруг линии 1
       {
-        name: 'Над линией 1',
+        name: 'Точки вокруг линии 1',
         type: 'scatter',
-        data: Array.from({ length: 50 }, (_, i) => [i * 2 + 1, 50 - i * 2 * 0.5 + Math.random() * 10]),
-        symbolSize: 6,
-        itemStyle: { color: '#FF7F50' }
-      },
-
-      // Под линией 1
-      {
-        name: 'Под линией 1',
-        type: 'scatter',
-        data: Array.from({ length: 50 }, (_, i) => [i * 2 + 1, 50 - i * 2 * 0.5 - Math.random() * 10]),
+        data: Array.from({ length: 20 }, (_, i) => {
+          const x = 1 + i * 99 / 19;
+          const base = 50 - x * 0.5;
+          const offset = (Math.random() > 0.5 ? 1 : -1) * Math.random() * 10;
+          return [x, base + offset];
+        }),
         symbolSize: 6,
         itemStyle: { color: '#FF7F50' }
       },
@@ -175,20 +149,16 @@ export class DashboardChartDataService implements OnDestroy {
         showSymbol: false
       },
 
-      // Над линией 2
+      // Точки вокруг линии 2
       {
-        name: 'Над линией 2',
+        name: 'Точки вокруг линии 2',
         type: 'scatter',
-        data: Array.from({ length: 50 }, (_, i) => [i * 2 + 1, 20 + i * 2 * 0.5 + Math.random() * 10]),
-        symbolSize: 6,
-        itemStyle: { color: '#4682B4' }
-      },
-
-      // Под линией 2
-      {
-        name: 'Под линией 2',
-        type: 'scatter',
-        data: Array.from({ length: 50 }, (_, i) => [i * 2 + 1, 20 + i * 2 * 0.5 - Math.random() * 10]),
+        data: Array.from({ length: 20 }, (_, i) => {
+          const x = 1 + i * 99 / 19;
+          const base = 20 + x * 0.5;
+          const offset = (Math.random() > 0.5 ? 1 : -1) * Math.random() * 10;
+          return [x, base + offset];
+        }),
         symbolSize: 6,
         itemStyle: { color: '#4682B4' }
       },
