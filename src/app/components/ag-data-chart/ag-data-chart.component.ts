@@ -39,6 +39,7 @@ export class AgDataChartComponent implements OnInit, OnDestroy {
         type: s.type === 'line' ? 'line' : 'scatter',
         xKey: 'x',
         yKey: 'y',
+        yName: s.name,
         data: transformed,
       };
 
