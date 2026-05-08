@@ -42,6 +42,14 @@ export class AgDataChartComponent implements OnInit, OnDestroy {
         data: transformed,
       };
 
+      if (s.type === 'scatter') {
+        seriesConfig.marker = {
+          shape: s.symbol || 'circle',
+          size: s.symbolSize || 6,
+          fill: s.itemStyle?.color,
+        };
+      }
+
       series.push(seriesConfig);
     });
 
