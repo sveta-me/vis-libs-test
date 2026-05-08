@@ -42,7 +42,18 @@ export class AgDataChartComponent implements OnInit, OnDestroy {
         data: transformed,
       };
 
-      if (s.type === 'scatter') {
+      if (s.type === 'line') {
+        seriesConfig.stroke = s.lineStyle?.color;
+        if (s.lineStyle?.type === 'dashed') {
+          seriesConfig.lineDash = [6, 4];
+        }
+        if (s.smooth) {
+          seriesConfig.interpolation = { type: 'smooth' };
+        }
+        if (s.showSymbol === false) {
+          seriesConfig.marker = { enabled: false };
+        }
+      } else {
         seriesConfig.marker = {
           shape: s.symbol || 'circle',
           size: s.symbolSize || 6,
