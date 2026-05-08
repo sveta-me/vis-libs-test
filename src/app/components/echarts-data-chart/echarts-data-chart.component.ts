@@ -31,9 +31,6 @@ export class EchartsDataChartComponent implements OnInit, OnDestroy {
   }
 
   private updateChart(data: ChartData): void {
-    console.log('update chart');
-    console.log(data);
-
     if (!this.chartInstance) return;
 
     const option: EChartsOption = {

@@ -30,12 +30,10 @@ export class AgDataChartComponent implements OnInit, OnDestroy {
   }
 
   private updateChart(data: ChartData): void {
-    const allData: any[] = [];
     const series: any[] = [];
 
     data.series.forEach((s: ChartSeriesData) => {
       const transformed = this.transformData(s.data);
-      allData.push(...transformed);
 
       const seriesConfig: any = {
         type: s.type === 'line' ? 'line' : 'scatter',
@@ -44,22 +42,10 @@ export class AgDataChartComponent implements OnInit, OnDestroy {
         data: transformed,
       };
 
-      if (s.type === 'line') {
-        seriesConfig.stroke = s.lineStyle?.color || '#000';
-        seriesConfig.lineDash = s.lineStyle?.type === 'dashed' ? [5, 5] : undefined;
-      } else {
-        seriesConfig.fill = s.itemStyle?.color || '#000';
-        seriesConfig.marker = {
-          shape: s.symbol === 'triangle' ? 'triangle' : 'circle',
-          size: s.symbolSize || 6,
-        };
-      }
-
       series.push(seriesConfig);
     });
 
     this.chartOptions = {
-      data: allData,
       series,
       axes: [
         { type: 'number', position: 'bottom', label: { rotation: 0 } },
